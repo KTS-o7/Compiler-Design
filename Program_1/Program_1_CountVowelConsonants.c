@@ -1,5 +1,6 @@
+#line 1 "Program_1_CountVowelConsonants.c"
 
-#line 2 "lex.yy.c"
+#line 3 "Program_1_CountVowelConsonants.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -351,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 7
-#define YY_END_OF_BUFFER 8
+#define YY_NUM_RULES 3
+#define YY_END_OF_BUFFER 4
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,28 +361,27 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[12] =
+static const flex_int16_t yy_accept[8] =
     {   0,
-        0,    0,    8,    6,    2,    3,    5,    1,    4,    4,
-        0
+        0,    0,    4,    3,    1,    2,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    4,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    1,    1,    1,
-        1,    1,    1,    1,    6,    6,    6,    6,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
-        1,    1,    1,    1,    1,    1,    6,    6,    6,    6,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    2,    3,    3,    3,    2,    3,
+        3,    3,    2,    3,    3,    3,    3,    3,    2,    3,
+        3,    3,    3,    3,    2,    3,    3,    3,    3,    3,
+        1,    1,    1,    1,    1,    1,    2,    3,    3,    3,
 
-        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
-        6,    6,    1,    1,    1,    1,    1,    1,    1,    1,
+        2,    3,    3,    3,    2,    3,    3,    3,    3,    3,
+        2,    3,    3,    3,    3,    3,    2,    3,    3,    3,
+        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,33 +398,29 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[7] =
+static const YY_CHAR yy_meta[4] =
     {   0,
-        1,    1,    1,    1,    1,    2
+        1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[13] =
+static const flex_int16_t yy_base[8] =
     {   0,
-        0,    0,    8,    9,    9,    9,    9,    9,    0,    0,
-        9,    5
+        0,    0,    4,    5,    5,    5,    5
     } ;
 
-static const flex_int16_t yy_def[13] =
+static const flex_int16_t yy_def[8] =
     {   0,
-       11,    1,   11,   11,   11,   11,   11,   11,   12,   12,
-        0,   11
+        7,    1,    7,    7,    7,    7,    0
     } ;
 
-static const flex_int16_t yy_nxt[16] =
+static const flex_int16_t yy_nxt[9] =
     {   0,
-        4,    5,    6,    7,    8,    9,   10,   11,    3,   11,
-       11,   11,   11,   11,   11
+        4,    5,    6,    7,    3,    7,    7,    7
     } ;
 
-static const flex_int16_t yy_chk[16] =
+static const flex_int16_t yy_chk[9] =
     {   0,
-        1,    1,    1,    1,    1,    1,   12,    3,   11,   11,
-       11,   11,   11,   11,   11
+        1,    1,    1,    3,    7,    7,    7,    7
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,19 +437,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "Program_2_CountCharWordSpaceDigit.l"
-#line 2 "Program_2_CountCharWordSpaceDigit.l"
-    // This code is to parse a given input string and output the number of digits, white spaces, lines, words and characters in the input string.
+#line 1 "Program_1_CountVowelConsonants.l"
+#line 2 "Program_1_CountVowelConsonants.l"
+    // This is a program that will take a string as input and returns the number of Vowels and consonants in the string.
 
     #include <stdio.h>
-    int num_lines = 0;
-    int num_words = 0;
-    int num_chars = 0;
-    int num_digits = 0;
-    int num_spaces = 0;
-    int num_tabs = 0;
-#line 455 "lex.yy.c"
-#line 456 "lex.yy.c"
+    int vowel = 0, consonants = 0;    
+#line 446 "Program_1_CountVowelConsonants.c"
+#line 447 "Program_1_CountVowelConsonants.c"
 
 #define INITIAL 0
 
@@ -670,9 +661,9 @@ YY_DECL
 		}
 
 	{
-#line 13 "Program_2_CountCharWordSpaceDigit.l"
+#line 8 "Program_1_CountVowelConsonants.l"
 
-#line 675 "lex.yy.c"
+#line 666 "Program_1_CountVowelConsonants.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -699,13 +690,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 12 )
+				if ( yy_current_state >= 8 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 9 );
+		while ( yy_base[yy_current_state] != 5 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -731,41 +722,20 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "Program_2_CountCharWordSpaceDigit.l"
-{ num_digits++; num_chars++; }
+#line 9 "Program_1_CountVowelConsonants.l"
+{printf("\n The parsed substring %s is vowel.",yytext);vowel++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "Program_2_CountCharWordSpaceDigit.l"
-{ num_tabs++; num_chars++; }
+#line 10 "Program_1_CountVowelConsonants.l"
+{printf("\n The parsed substring %s is consonant.",yytext);consonants++;}
 	YY_BREAK
 case 3:
-/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 16 "Program_2_CountCharWordSpaceDigit.l"
-{  num_chars++; num_lines++; }
-	YY_BREAK
-case 4:
-YY_RULE_SETUP
-#line 17 "Program_2_CountCharWordSpaceDigit.l"
-{ num_words++; num_chars += yyleng; }
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 18 "Program_2_CountCharWordSpaceDigit.l"
-{ num_spaces++; num_chars++; }
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 19 "Program_2_CountCharWordSpaceDigit.l"
-{ num_chars++; }
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 20 "Program_2_CountCharWordSpaceDigit.l"
+#line 11 "Program_1_CountVowelConsonants.l"
 ECHO;
 	YY_BREAK
-#line 768 "lex.yy.c"
+#line 738 "Program_1_CountVowelConsonants.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1062,7 +1032,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 12 )
+			if ( yy_current_state >= 8 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1090,11 +1060,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 12 )
+		if ( yy_current_state >= 8 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 11);
+	yy_is_jam = (yy_current_state == 7);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1770,23 +1740,20 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "Program_2_CountCharWordSpaceDigit.l"
+#line 11 "Program_1_CountVowelConsonants.l"
 
 
-int yywrap(){
+int yywrap()
+{
     return 1;
 }
-
-int main(){
-    printf("Enter the input string:  - after entering the string press Ctrl+D\n");
+int main()
+{
+    printf("\nEnter the string:  when done press Ctrl+D to view output\n");
     yylex();
     yywrap();
-    printf("Number of digits: %d\n", num_digits);
-    printf("Number of white spaces: %d\n", num_spaces);
-    printf("Number of lines: %d\n", num_lines);
-    printf("Number of words: %d\n", num_words);
-    printf("Number of characters: %d\n", num_chars);
-    printf("Number of tabs: %d\n", num_tabs);
+    printf("\nThe number of vowels in the string is %d\n",vowel);
+    printf("\nThe number of consonants in the string is %d\n",consonants);
     return 0;
 }
 

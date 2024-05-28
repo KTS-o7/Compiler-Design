@@ -1,5 +1,6 @@
+#line 1 "Program_3_CountIntDecFrac.c"
 
-#line 2 "lex.yy.c"
+#line 3 "Program_3_CountIntDecFrac.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -457,8 +458,8 @@ char *yytext;
 #line 2 "Program_3_CountIntDecFrac.l"
     #include <stdio.h>
     int posint = 0, negint = 0, posfloat = 0, negfloat = 0, posfrac = 0, negfrac = 0;
-#line 460 "lex.yy.c"
-#line 461 "lex.yy.c"
+#line 461 "Program_3_CountIntDecFrac.c"
+#line 462 "Program_3_CountIntDecFrac.c"
 
 #define INITIAL 0
 
@@ -677,7 +678,7 @@ YY_DECL
 	{
 #line 6 "Program_3_CountIntDecFrac.l"
 
-#line 680 "lex.yy.c"
+#line 681 "Program_3_CountIntDecFrac.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -769,7 +770,7 @@ YY_RULE_SETUP
 #line 13 "Program_3_CountIntDecFrac.l"
 ECHO;
 	YY_BREAK
-#line 772 "lex.yy.c"
+#line 773 "Program_3_CountIntDecFrac.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
