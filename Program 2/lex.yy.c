@@ -444,17 +444,16 @@ char *yytext;
 #line 1 "Program_2_CountCharWordSpaceDigit.l"
 #line 2 "Program_2_CountCharWordSpaceDigit.l"
     // This code is to parse a given input string and output the number of digits, white spaces, lines, words and characters in the input string.
+
     #include <stdio.h>
-    #include <string.h>
     int num_lines = 0;
     int num_words = 0;
     int num_chars = 0;
     int num_digits = 0;
     int num_spaces = 0;
     int num_tabs = 0;
-
+#line 455 "lex.yy.c"
 #line 456 "lex.yy.c"
-#line 457 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -671,9 +670,9 @@ YY_DECL
 		}
 
 	{
-#line 14 "Program_2_CountCharWordSpaceDigit.l"
+#line 13 "Program_2_CountCharWordSpaceDigit.l"
 
-#line 676 "lex.yy.c"
+#line 675 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -732,41 +731,41 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "Program_2_CountCharWordSpaceDigit.l"
+#line 14 "Program_2_CountCharWordSpaceDigit.l"
 { num_digits++; num_chars++; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 16 "Program_2_CountCharWordSpaceDigit.l"
+#line 15 "Program_2_CountCharWordSpaceDigit.l"
 { num_tabs++; num_chars++; }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 17 "Program_2_CountCharWordSpaceDigit.l"
+#line 16 "Program_2_CountCharWordSpaceDigit.l"
 {  num_chars++; num_lines++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 18 "Program_2_CountCharWordSpaceDigit.l"
-{ num_words++; num_chars += strlen(yytext); }
+#line 17 "Program_2_CountCharWordSpaceDigit.l"
+{ num_words++; num_chars += yyleng; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 19 "Program_2_CountCharWordSpaceDigit.l"
+#line 18 "Program_2_CountCharWordSpaceDigit.l"
 { num_spaces++; num_chars++; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 20 "Program_2_CountCharWordSpaceDigit.l"
+#line 19 "Program_2_CountCharWordSpaceDigit.l"
 { num_chars++; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 21 "Program_2_CountCharWordSpaceDigit.l"
+#line 20 "Program_2_CountCharWordSpaceDigit.l"
 ECHO;
 	YY_BREAK
-#line 769 "lex.yy.c"
+#line 768 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1771,19 +1770,17 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 21 "Program_2_CountCharWordSpaceDigit.l"
+#line 20 "Program_2_CountCharWordSpaceDigit.l"
 
 
 int yywrap(){
     return 1;
 }
 
-int main()
-{
+int main(){
     printf("Enter the input string:  - after entering the string press Ctrl+D\n");
     yylex();
     yywrap();
-    printf("\n");
     printf("Number of digits: %d\n", num_digits);
     printf("Number of white spaces: %d\n", num_spaces);
     printf("Number of lines: %d\n", num_lines);
@@ -1792,3 +1789,4 @@ int main()
     printf("Number of tabs: %d\n", num_tabs);
     return 0;
 }
+
