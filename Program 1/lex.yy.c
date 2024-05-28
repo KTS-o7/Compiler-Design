@@ -437,7 +437,7 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "Program_1_CountVowelConsonants.l"
-#line 3 "Program_1_CountVowelConsonants.l"
+#line 2 "Program_1_CountVowelConsonants.l"
     // This is a program that will take a string as input and returns the number of Vowels and consonants in the string.
 
     #include <stdio.h>
@@ -660,7 +660,7 @@ YY_DECL
 		}
 
 	{
-#line 9 "Program_1_CountVowelConsonants.l"
+#line 8 "Program_1_CountVowelConsonants.l"
 
 #line 665 "lex.yy.c"
 
@@ -721,17 +721,17 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "Program_1_CountVowelConsonants.l"
+#line 9 "Program_1_CountVowelConsonants.l"
 {printf("\n The parsed substring %s is vowel.",yytext);vowel++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "Program_1_CountVowelConsonants.l"
+#line 10 "Program_1_CountVowelConsonants.l"
 {printf("\n The parsed substring %s is consonant.",yytext);consonants++;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "Program_1_CountVowelConsonants.l"
+#line 11 "Program_1_CountVowelConsonants.l"
 ECHO;
 	YY_BREAK
 #line 737 "lex.yy.c"
@@ -1739,7 +1739,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 12 "Program_1_CountVowelConsonants.l"
+#line 11 "Program_1_CountVowelConsonants.l"
 
 
 int yywrap()
@@ -1755,3 +1755,4 @@ int main()
     printf("\n The number of consonants in the string is %d\n",consonants);
     return 0;
 }
+
