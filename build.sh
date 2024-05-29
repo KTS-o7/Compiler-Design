@@ -51,9 +51,9 @@ for folder in $(ls -d */); do
     cd $folder || { print_colored $RED "Failed to change directory to $folder"; continue; }
 
     if (ls *.l 1> /dev/null 2>&1); then
-        print_colored $GREEN "Found lex files in $folder"
+        print_colored $GREEN " Found lex files in $folder"
     else
-        print_colored $RED "No lex files found in $folder"
+        print_colored $RED " No lex files found in $folder"
         cd .. || { print_colored $RED "Failed to change directory back to parent"; continue; }
         continue
     fi
@@ -64,17 +64,17 @@ for folder in $(ls -d */); do
         filename="${filename%.*}"
 
         if [ -f $filename ]; then
-            print_colored $RED "$filename already exists. Skipping building $file\n"
+            print_colored $RED " $filename already exists. Skipping building $file\n"
             built_files=$((built_files+1))
             continue
         fi
 
-        print_colored $YELLOW "Building $file"
+        print_colored $YELLOW " Building $file"
         lex -o $filename.c $file > /dev/null 2>&1 || { print_colored $RED "Failed to build $file"; continue; }
         gcc $filename.c -lfl -o $filename > /dev/null 2>&1 || { print_colored $RED "Failed to compile $filename"; continue; }
         built_files=$((built_files+1))
         curr_built=$((curr_built+1))
-        print_colored $GREEN "\n  Done building $file"
+        print_colored $GREEN "\n Done building $file"
     done
     if [ $built_files -eq $total_files ]; then
     progress_percent=100
