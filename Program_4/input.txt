@@ -21,5 +21,9 @@ int main() {
     Line 2
     Line 3 */
 
+    // This will also be a comments
+
+    /* Whatever can be written here *** asd   // asds  //  **** ****/
+
     return 0;
 }
