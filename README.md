@@ -68,8 +68,15 @@ Input format for each of the programs
     int bar(int a,int b){return a;}
     ```
 4.  > Generate the intermediate 3 address code and quadruples for a given expression
+
     ```bash
     a=b+c*d
     a+b+c+d+e+f
     a=(b+d)*(c+e)
+    ```
+
+5.  > Generate the assembly code for a given set of arithmetic expressions
+
+    ```bash
+    ./outputfilename.out < input.txt
     ```
