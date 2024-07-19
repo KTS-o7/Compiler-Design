@@ -29,6 +29,8 @@
 // E -> Expression
 // F -> For loop block
 // DA -> Declaration or assignment
+// D -> Declaration
+// A -> Assignment
 
 S:F;
 F:FOR'('DA';'C';'S1')'B { cnt++; } |
