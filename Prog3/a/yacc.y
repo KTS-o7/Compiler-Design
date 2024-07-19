@@ -5,29 +5,50 @@
 	int yyerror();
 	int cnt=0;
 %}
-%token FOR IDEN NUM
+%token FOR IDEN NUM TYPE OP
+%left '+' '-'
+%left '*' '/'
 %%
-S:I
-;
-I:FOR A B	{cnt++;}
-;
-A:'('E';'E';'E')'
-;
-E:IDEN Z IDEN
-|IDEN Z NUM
-|IDEN U
-|IDEN
-;
-Z:'='|'>'|'<'|'<''='|'>''='|'=''+'|'=''-'
-;
-U:'+''+'|'-''-' 
-;
-B:B B
-|'{' B '}'
-|I
-|E';'
-|
-;
+
+// Tokens
+
+// FOR -> for
+// IDEN -> identifier
+// NUM -> number
+// TYPE -> datatype
+// OP -> relational operator
+
+// Non-terminals
+
+// S -> Start symbol
+// BODY -> Body  of For loop
+// COND -> Condition
+// S1 -> Single Statement
+// SS -> Set of statements
+// T -> Term
+// E -> Expression
+// F -> For loop block
+// DA -> Declaration or assignment
+// DECL -> Declaration
+// ASSGN -> Assignment
+
+S:F;
+F:FOR'('DA';'COND';'S1')'BODY { cnt++; } |
+  FOR'(' ';'COND';'S1')'BODY { cnt++; } |
+  FOR'('DA';' ';'S1')'BODY { cnt++; } |
+  FOR'(' ';' ';'S1')'BODY { cnt++; } ;
+
+DA:DECL|ASSGN
+DECL: TYPE IDEN | TYPE ASSGN;
+ASSGN : IDEN '=' E;
+COND : T OP T;
+T : NUM | IDEN ;
+
+BODY: S1';' | '{'SS'}' | F |';';
+
+SS: S1 ';' SS | F SS |;
+S1: ASSGN | E | DECL ;
+E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
 %%
 int main()
 {

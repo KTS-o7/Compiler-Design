@@ -63,7 +63,7 @@ Input format for each of the programs
     ```
     > b. Validate function defination
     ```bash
-    int main(){}
+    int main(){};
     int foo(int a){}
     int bar(int a,int b){return a;}
     ```
