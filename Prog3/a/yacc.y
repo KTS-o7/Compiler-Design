@@ -11,19 +11,22 @@
 %%
 
 S:I;
-I:FOR'('D';'C';'S1')'B { cnt++; } |
+I:FOR'('F';'C';'S1')'B { cnt++; } |
   FOR'(' ';'C';'S1')'B { cnt++; } |
-  FOR'('D';' ';'S1')'B { cnt++; } |
+  FOR'('F';' ';'S1')'B { cnt++; } |
   FOR'(' ';' ';'S1')'B { cnt++; } ;
 
-B: S1';' | '{'SS'}' | I ;
-SS: S1 ';' SS | I SS |;
-S1: A | E | D ;
+F:D|A
 D: TYPE IDEN | TYPE A;
-A : IDEN '=' E ;
-E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
+A : IDEN '=' E;
 C : T OP T;
 T : NUM | IDEN ;
+
+B: S1';' | '{'SS'}' | I |';';
+
+SS: S1 ';' SS | I SS |;
+S1: A | E | D ;
+E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
 %%
 int main()
 {
