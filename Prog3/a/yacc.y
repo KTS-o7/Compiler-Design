@@ -21,33 +21,33 @@
 // Non-terminals
 
 // S -> Start symbol
-// B -> Body  of For loop
-// C -> Condition
+// BODY -> Body  of For loop
+// COND -> Condition
 // S1 -> Single Statement
 // SS -> Set of statements
 // T -> Term
 // E -> Expression
 // F -> For loop block
 // DA -> Declaration or assignment
-// D -> Declaration
-// A -> Assignment
+// DECL -> Declaration
+// ASSGN -> Assignment
 
 S:F;
-F:FOR'('DA';'C';'S1')'B { cnt++; } |
-  FOR'(' ';'C';'S1')'B { cnt++; } |
-  FOR'('DA';' ';'S1')'B { cnt++; } |
-  FOR'(' ';' ';'S1')'B { cnt++; } ;
+F:FOR'('DA';'COND';'S1')'BODY { cnt++; } |
+  FOR'(' ';'COND';'S1')'BODY { cnt++; } |
+  FOR'('DA';' ';'S1')'BODY { cnt++; } |
+  FOR'(' ';' ';'S1')'BODY { cnt++; } ;
 
-DA:D|A
-D: TYPE IDEN | TYPE A;
-A : IDEN '=' E;
-C : T OP T;
+DA:DECL|ASSGN
+DECL: TYPE IDEN | TYPE ASSGN;
+ASSGN : IDEN '=' E;
+COND : T OP T;
 T : NUM | IDEN ;
 
-B: S1';' | '{'SS'}' | F |';';
+BODY: S1';' | '{'SS'}' | F |';';
 
 SS: S1 ';' SS | F SS |;
-S1: A | E | D ;
+S1: ASSGN | E | DECL ;
 E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
 %%
 int main()

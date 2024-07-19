@@ -63,7 +63,7 @@ Input format for each of the programs
     ```
     > b. Validate function defination
     ```bash
-    int main(){}
+    int main(){};
     int foo(int a){}
     int bar(int a,int b){return a;}
     ```
@@ -80,3 +80,23 @@ Input format for each of the programs
     ```bash
     ./outputfilename.out < input.txt
     ```
+
+---
+
+# Change Log
+
+## Version 1
+
+- Added all 5 programs
+- Had some conflicts in Shift/Reduce and Reduce/ Reduce
+
+## Version 2
+
+- @DeathStroke1991(https://github.com/DeathStroke19891) Fixed the issues in 3a and 3b
+- Added comments on grammer.
+
+---
+
+# Contribution
+
+This repo is open for contributions. Please open an Issue or open a PR with appropriate edits.

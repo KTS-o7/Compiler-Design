@@ -27,8 +27,8 @@
 // SS -> Set of statements
 // T -> Term
 // E -> Expression
-// D -> Declaration
-// A -> Assignment
+// DECL -> Declaration
+// ASSGN -> Assignment
 
 S: FUN  { printf("Accepted\n"); exit(0); } ;
 FUN: TYPE IDEN '(' PARAMS ')' BODY ;
@@ -36,9 +36,9 @@ BODY: S1';' | '{'SS'}'
 PARAMS: PARAM','PARAMS | PARAM | ;
 PARAM:  TYPE IDEN;
 SS: S1';'SS | ;
-S1: A | E | D ;
-D: TYPE IDEN | TYPE A ;
-A : IDEN '=' E ;
+S1: ASSGN | E | DECL ;
+DECL: TYPE IDEN | TYPE ASSGN ;
+ASSGN : IDEN '=' E ;
 E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
 T : NUM | IDEN ;
 %%
