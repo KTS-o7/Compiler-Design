@@ -5,29 +5,25 @@
 	int yyerror();
 	int cnt=0;
 %}
-%token FOR IDEN NUM
+%token FOR IDEN NUM TYPE OP
+%left '+' '-'
+%left '*' '/'
 %%
-S:I
-;
-I:FOR A B	{cnt++;}
-;
-A:'('E';'E';'E')'
-;
-E:IDEN Z IDEN
-|IDEN Z NUM
-|IDEN U
-|IDEN
-;
-Z:'='|'>'|'<'|'<''='|'>''='|'=''+'|'=''-'
-;
-U:'+''+'|'-''-' 
-;
-B:B B
-|'{' B '}'
-|I
-|E';'
-|
-;
+
+S:I;
+I:FOR'('D';'C';'S1')'B { cnt++; } |
+  FOR'(' ';'C';'S1')'B { cnt++; } |
+  FOR'('D';' ';'S1')'B { cnt++; } |
+  FOR'(' ';' ';'S1')'B { cnt++; } ;
+
+B: S1';' | '{'SS'}' | I ;
+SS: S1 ';' SS | I SS |;
+S1: A | E | D ;
+D: TYPE IDEN | TYPE A;
+A : IDEN '=' E ;
+E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
+C : T OP T;
+T : NUM | IDEN ;
 %%
 int main()
 {

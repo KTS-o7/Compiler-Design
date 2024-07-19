@@ -5,31 +5,22 @@
     int yylex();
 %}
 
-%token TYPE IDEN NUM RET
- 
+%token TYPE IDEN NUM
+%left '+' '-'
+%left '*' '/'
+
 %%
-S: FUN  {printf("Accepted\n");exit(0);}
-;
-FUN: TYPE IDEN '(' PARAM ')' '{' BODY '}'
-;
-PARAM: PARAM ',' PARAM
-|TYPE IDEN
-|
-;
-BODY: BODY BODY
-| PARAM ';'
-| E ';'
-| RET E ';'
-|
-;
-E: IDEN '=' E
-| E '+' E
-| E '-' E
-| E '*' E
-| E '/' E
-| IDEN
-| NUM
-;
+S: FUN  { printf("Accepted\n"); exit(0); } ;
+FUN: TYPE IDEN '(' PARAM ')' BODY ;
+BODY: ';'|'{'SS'}'
+PARAM: TYPE IDEN PARAM1 | ;
+PARAM1: ',' PARAM |;
+SS: S1';'SS | ;
+S1: A | E | D ;
+D: TYPE IDEN | TYPE A ;
+A : IDEN '=' E ;
+E : E '+' E | E '-' E | E '*' E | E '/' E | '-''-'E | '+''+'E | E'+''+' | E'-''-' | T ;
+T : NUM | IDEN ;
 %%
 int main()
 {
