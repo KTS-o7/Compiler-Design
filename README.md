@@ -80,3 +80,31 @@ Input format for each of the programs
     ```bash
     ./outputfilename.out < input.txt
     ```
+
+---
+
+## LLVM Programs
+
+### Program 1
+
+This program is to print the unoptimised and optimised code for a bubble sort code
+
+```bash
+# to print the unoptimised assembly code
+clang filename.c -S -emit-llvm -o filename
+
+# to print the optimised assembly code
+clang filename.c -S -emit-llvm -o filename -O3
+```
+
+### Program 2
+
+This program is to print the unoptimised and optimised code for a binary search code
+
+```bash
+# to print the unoptimised assembly code
+clang filename.c -S -emit-llvm -o filename
+
+# to print the optimised assembly code
+clang filename.c -S -emit-llvm -o filename -O3
+```
