@@ -83,6 +83,44 @@ Input format for each of the programs
 
 ---
 
+## LLVM Programs
+
+### Program 1
+
+This program is to print the unoptimised and optimised code for a bubble sort code
+
+```bash
+# to print the unoptimised assembly code
+clang filename.c -S -emit-llvm -o filename
+
+# to print the optimised assembly code
+clang filename.c -S -emit-llvm -o filename -O3
+```
+
+### Program 2
+
+This program is to print the unoptimised and optimised code for a binary search code
+
+```bash
+# to print the unoptimised assembly code
+clang filename.c -S -emit-llvm -o filename
+
+# to print the optimised assembly code
+clang filename.c -S -emit-llvm -o filename -O3
+```
+
+### Program 3
+
+this is about loop unrolling
+
+```bash
+# comment out the unroll pragma to see the difference
+clang filename.c -S -emit-llvm -o filename
+
+# for unrolled optimisation
+clanf filename.c -S -emit-llvm -o filename -O3
+```
+
 # Change Log
 
 ## Version 1
@@ -94,6 +132,11 @@ Input format for each of the programs
 
 - @DeathStroke1991(https://github.com/DeathStroke19891) Fixed the issues in 3a and 3b
 - Added comments on grammer.
+
+## Version 3
+
+- Added LLVM programs
+- Added the new commands to run the programs
 
 ---
 

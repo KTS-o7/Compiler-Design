@@ -108,3 +108,15 @@ clang filename.c -S -emit-llvm -o filename
 # to print the optimised assembly code
 clang filename.c -S -emit-llvm -o filename -O3
 ```
+
+### Program 3
+
+this is about loop unrolling
+
+```bash
+# comment out the unroll pragma to see the difference
+clang filename.c -S -emit-llvm -o filename
+
+# for unrolled optimisation
+clanf filename.c -S -emit-llvm -o filename -O3
+```
