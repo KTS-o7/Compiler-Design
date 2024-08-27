@@ -2,6 +2,23 @@
 
 - The following codes are written in C and are meant to be compiled with CC or GCC compilers.
 
+## LABEXAM TO REPO MAPPING
+
+| LAB Question                         | Repo Program path                                 |
+| ------------------------------------ | ------------------------------------------------- |
+| Words,lines,chars,Special Characters | [Link](../Prog1/Lex/lex.l)                        |
+| a^m b^m+n c^n                        | [Link](../Prog1/Yacc/yacc.y)                      |
+| Integers and Fractions               | [Link](../Prog2/Lex/lex.l)                        |
+| Arithmetic Expression                | [Link](../Prog2/Yacc/yacc.y)                      |
+| Remove comment lines                 | [Link](../Lab%20New%20Codes/commentRemover/lex.l) |
+| Nested For loops                     | [Link](../Prog3/a/lex.l)                          |
+| Number of identifiers and operators  | [Link](../Lab%20New%20Codes/keywordCount/lex.l)   |
+| Nested IF statements                 | [Link](../Lab%20New%20Codes/nestedIf/lex.l)       |
+| Variable Declaration                 | [Link](../Lab%20New%20Codes/declCount/lex.l)      |
+| Three address code                   | [Link](../Prog4/lex.l)                            |
+| Function definition                  | [Link](../Prog3/b/lex.l)                          |
+| Assembly code generation             | [Link](../Prog5/lex.l)                            |
+
 ## Pre-requisites
 
 - Need to have the following installed :
@@ -120,3 +137,31 @@ clang filename.c -S -emit-llvm -o filename
 # for unrolled optimisation
 clanf filename.c -S -emit-llvm -o filename -O3
 ```
+
+# Change Log
+
+## Version 1
+
+- Added all 5 programs
+- Had some conflicts in Shift/Reduce and Reduce/ Reduce
+
+## Version 2
+
+- @DeathStroke1991(https://github.com/DeathStroke19891) Fixed the issues in 3a and 3b
+- Added comments on grammer.
+
+## Version 3
+
+- Added LLVM programs
+- Added the new commands to run the programs
+
+## Version 4
+
+- Added Extra lab codes
+- Added lab to repo mapping
+
+---
+
+# Contribution
+
+This repo is open for contributions. Please open an Issue or open a PR with appropriate edits.
