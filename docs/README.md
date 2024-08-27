@@ -6,7 +6,7 @@
 
 | LAB Question                         | Repo Program path                                 |
 | ------------------------------------ | ------------------------------------------------- |
-| Words,lines,chars,Special Characters | [Link](../Prog1/Lex/lex.l)                        |
+| Words,lines,chars,Special Characters | [Link](/Prog1/Lex/lex.l)                          |
 | a^m b^m+n c^n                        | [Link](../Prog1/Yacc/yacc.y)                      |
 | Integers and Fractions               | [Link](../Prog2/Lex/lex.l)                        |
 | Arithmetic Expression                | [Link](../Prog2/Yacc/yacc.y)                      |
