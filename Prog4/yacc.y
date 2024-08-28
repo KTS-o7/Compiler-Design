@@ -27,6 +27,7 @@ void quadruples();
 %token <exp> IDEN NUM
 %type <exp> EXP
 
+%right '='
 %left '+' '-'
 %left '*' '/'
 
@@ -39,15 +40,15 @@ STMTS	: STMTS STMT
 STMT	: EXP '\n'
 	;
 
-EXP	: EXP '+' EXP { $$ = addToTable($1, $3, '+'); }
-	| EXP '-' EXP { $$ = addToTable($1, $3, '-'); }
-	| EXP '*' EXP { $$ = addToTable($1, $3, '*'); }
-	| EXP '/' EXP { $$ = addToTable($1, $3, '/'); }
-	| '(' EXP ')' { $$ = $2; }
-	| IDEN '=' EXP { $$ = addToTable($1, $3, '='); }
-	| IDEN { $$ = $1; }
-	| NUM { $$ = $1; }
-	;
+EXP : IDEN '=' EXP { $$ = addToTable($1, $3, '='); }
+    | EXP '+' EXP { $$ = addToTable($1, $3, '+'); }
+    | EXP '-' EXP { $$ = addToTable($1, $3, '-'); }
+    | EXP '*' EXP { $$ = addToTable($1, $3, '*'); }
+    | EXP '/' EXP { $$ = addToTable($1, $3, '/'); }
+    | '(' EXP ')' { $$ = $2; }
+    | IDEN { $$ = $1; }
+    | NUM { $$ = $1; }
+    ;
 
 %%
 
