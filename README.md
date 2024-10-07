@@ -75,8 +75,8 @@ Input format for each of the programs
 
 3.  > a. Count the number of valid nested FOR loops
     ```bash
-    for(a;b;c){}
-    for(a;b;c){for(a;b;c){d;}}
+    for(a;b<c;c);
+    for(i=0;i<10;i){for(j=0;j<10;j);}
     ```
     > b. Validate function defination
     ```bash
