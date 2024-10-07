@@ -12,41 +12,37 @@
 
 %%
 
-// List of statements
 STMTS: STMT
      | STMTS STMT
      ;
 
-// Possible statements
-STMT: FORSTMT                // For loop
-    | IDEN '=' EXPR ';'      // Assignment
-    | IDEN ';'               // Identifier followed by semicolon
-    | '{' STMTS '}'          // Block of statements
-    | ';'                    // Empty statement
+STMT: FORSTMT                
+    | IDEN '=' EXPR ';'      
+    | IDEN ';'               
+    | '{' STMTS '}'          
+    | ';'                    
     ;
 
-// For loop structure
+
 FORSTMT: FOR '(' ASSGN ';' COND ';' ASSGN ')' 
             {
-                total_for_count++;              // Increment for loop count
-                current_nesting++;              // Increase nesting level
+                total_for_count++;             
+                current_nesting++;              
                 if (current_nesting > max_nesting) {
-                    max_nesting = current_nesting;  // Track maximum nesting level
+                    max_nesting = current_nesting;  
                 }
             }
             STMT
             {
-                current_nesting--;              // Decrease nesting level after loop ends
+                current_nesting--;            
             }
             ;
 
-// Assignment inside for loop (initialization or update)
 ASSGN: IDEN '=' EXPR
     | IDEN 
     |
       ;
 
-// Condition inside for loop
 COND: IDEN OP IDEN
      | IDEN OP NUM
      | IDEN
@@ -54,7 +50,6 @@ COND: IDEN OP IDEN
      ;
 
 
-// Expressions (simple arithmetic or identifier/number)
 EXPR: IDEN
      | NUM
      | IDEN '+' IDEN
@@ -65,7 +60,6 @@ EXPR: IDEN
 
 %%
 
-// Main function to handle user input and parse
 int main() {
     printf("Enter the code snippet (Ctrl+D to end input on Unix, Ctrl+Z on Windows):\n");
     yyparse();
@@ -74,7 +68,6 @@ int main() {
     return 0;
 }
 
-// Error handling
 int yyerror(const char *s) {
     fprintf(stderr, "Parse error: %s\n", s);
     exit(1);
