@@ -8,7 +8,7 @@
     int yyerror(const char *s);
 %}
 
-%token IF IDEN NUM
+%token IF IDEN NUM OP
 
 %%
 
@@ -37,14 +37,11 @@ IFSTMT: IF '(' COND ')'
             }
             ;
 
-COND: IDEN CMP IDEN
-         | IDEN CMP NUM
+COND: IDEN OP IDEN
+         | IDEN OP NUM
          | IDEN
          | NUM
          ;
-
-CMP: '=' | '<' | '>' | '<''=' | '>''=' | '!''='
-          ;
 
 EXPR: IDEN
           | NUM
